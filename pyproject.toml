@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video-game-sales-ml-analysis"
+version = "0.1.0"
+description = "Reusable ML analysis CLI for video game sales datasets."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas",
+  "numpy",
+  "matplotlib",
+  "seaborn",
+  "scikit-learn",
+  "jupyter",
+]
+
+[project.scripts]
+vg-sales-analysis = "video_games_analysis:main"
+
+[tool.setuptools]
+py-modules = ["video_games_analysis"]
+
+[tool.setuptools.package-dir]
+"" = "src"

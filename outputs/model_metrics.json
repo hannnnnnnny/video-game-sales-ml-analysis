@@ -1,0 +1,209 @@
+{
+  "config": {
+    "data_path": "C:\\Users\\harry\\OneDrive\\\u6587\u6863\\New project 4\\data\\VideoGames.csv",
+    "output_dir": "C:\\Users\\harry\\OneDrive\\\u6587\u6863\\New project 4\\outputs",
+    "hit_threshold": 0.6,
+    "k_values": [
+      2,
+      3
+    ],
+    "selected_k": 2,
+    "example_genre": "Action",
+    "example_platform": "PS4",
+    "example_critic_score": 85,
+    "example_user_score": 8.2,
+    "top_coefficients": 12
+  },
+  "dataset": {
+    "source": "C:\\Users\\harry\\OneDrive\\\u6587\u6863\\New project 4\\data\\VideoGames.csv",
+    "raw_rows": 6250,
+    "raw_columns": 11,
+    "clean_rows": 6142,
+    "clean_columns": 12,
+    "year_min": 1985,
+    "year_max": 2016,
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fighting",
+      "Misc",
+      "Platform",
+      "Puzzle",
+      "Racing",
+      "Role-Playing",
+      "Shooter",
+      "Simulation",
+      "Sports",
+      "Strategy"
+    ],
+    "platform_count": 17
+  },
+  "linear_global_sales": {
+    "train_r2": 0.1870847622944698,
+    "train_adjusted_r2": 0.18461850836444127,
+    "test_r2": 0.1730480953235467,
+    "test_rmse_log_sales": 0.43493343346906005
+  },
+  "linear_user_score": {
+    "train_r2": 0.04696566541954117,
+    "train_adjusted_r2": 0.04674387479012998,
+    "test_r2": 0.05004497446208689,
+    "test_rmse_log_user_score": 0.2059573680164697
+  },
+  "linear_critic_score": {
+    "train_r2": 0.46206033491196596,
+    "train_adjusted_r2": 0.4576437530967933,
+    "test_r2": 0.45679083102601636,
+    "test_rmse_critic_score": 10.277702520697112,
+    "largest_coefficients": {
+      "Platform_DC": 16.628,
+      "Platform_PC": 7.9414,
+      "Genre_Sports": 7.2267,
+      "Genre_Puzzle": 6.1224,
+      "User_Score": 5.8016,
+      "Platform_Wii": -4.8982,
+      "Platform_XOne": 4.5734,
+      "Platform_PS": 3.3952,
+      "Genre_Misc": 3.179,
+      "Platform_PS4": 2.783,
+      "Platform_PS3": 2.7582,
+      "Genre_Strategy": 2.53
+    }
+  },
+  "logistic_hit_model": {
+    "hit_threshold_millions": 0.6,
+    "accuracy": 0.5485621269669018,
+    "roc_auc": 0.6282923705623664,
+    "classification_report": {
+      "0": {
+        "precision": 0.7859872611464969,
+        "recall": 0.4816549570647931,
+        "f1-score": 0.5972894482090997,
+        "support": 1281.0
+      },
+      "1": {
+        "precision": 0.3724007561436673,
+        "recall": 0.701067615658363,
+        "f1-score": 0.48641975308641977,
+        "support": 562.0
+      },
+      "accuracy": 0.5485621269669018,
+      "macro avg": {
+        "precision": 0.5791940086450821,
+        "recall": 0.591361286361578,
+        "f1-score": 0.5418546006477597,
+        "support": 1843.0
+      },
+      "weighted avg": {
+        "precision": 0.6598691842004359,
+        "recall": 0.5485621269669018,
+        "f1-score": 0.563481109273155,
+        "support": 1843.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        617,
+        664
+      ],
+      [
+        168,
+        394
+      ]
+    ]
+  },
+  "knn_sales_model": {
+    "test_mae_log_sales": 0.26283466510749287,
+    "test_r2": 0.3362224166325154,
+    "example_game": {
+      "genre": "Action",
+      "platform": "PS4",
+      "critic_score": 85,
+      "user_score": 8.2
+    },
+    "example_prediction_global_sales_millions": 1.13311292678305,
+    "nearest_neighbors_for_example": [
+      {
+        "rank": 1,
+        "name": "Luigi's Mansion: Dark Moon",
+        "global_sales_millions": 4.59,
+        "critic_score": 86.0,
+        "user_score": 8.4,
+        "distance": 0.15434367216695188
+      },
+      {
+        "rank": 2,
+        "name": "Resident Evil: Revelations",
+        "global_sales_millions": 0.88,
+        "critic_score": 82.0,
+        "user_score": 8.5,
+        "distance": 0.29675286512353594
+      },
+      {
+        "rank": 3,
+        "name": "Art Academy: Lessons for Everyone",
+        "global_sales_millions": 0.46,
+        "critic_score": 81.0,
+        "user_score": 7.6,
+        "distance": 0.5001369370885689
+      },
+      {
+        "rank": 4,
+        "name": "Azure Striker Gunvolt",
+        "global_sales_millions": 0.01,
+        "critic_score": 77.0,
+        "user_score": 8.4,
+        "distance": 0.587771274837984
+      },
+      {
+        "rank": 5,
+        "name": "The Legend of Zelda: A Link Between Worlds",
+        "global_sales_millions": 3.1,
+        "critic_score": 91.0,
+        "user_score": 8.9,
+        "distance": 0.642710849399036
+      }
+    ]
+  },
+  "kmeans_genre_decade": {
+    "silhouette_scores": {
+      "k_2": 0.5361178481450255,
+      "k_3": 0.47150655885709886
+    },
+    "selected_k": 2,
+    "selected_cluster_summary": [
+      {
+        "cluster": 0,
+        "pairs": 31,
+        "mean_NA": 0.344,
+        "mean_EU": 0.201,
+        "mean_JP": 0.104,
+        "mean_Other": 0.063,
+        "mean_critic_score": 71.68,
+        "mean_user_score": 7.131
+      },
+      {
+        "cluster": 1,
+        "pairs": 6,
+        "mean_NA": 1.234,
+        "mean_EU": 0.798,
+        "mean_JP": 0.504,
+        "mean_Other": 0.139,
+        "mean_critic_score": 85.809,
+        "mean_user_score": 8.597
+      }
+    ],
+    "wcss_by_k": {
+      "1": 221.99999999999997,
+      "2": 118.02141677483033,
+      "3": 85.40362345604264,
+      "4": 69.08086514278743,
+      "5": 55.50585943682215,
+      "6": 43.15948988163111,
+      "7": 35.87302371891656,
+      "8": 28.261692423597687,
+      "9": 25.488019577367993,
+      "10": 19.836196740905606
+    }
+  }
+}

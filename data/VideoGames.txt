@@ -1,0 +1,2 @@
+This dataset contains information about video games, including attributes such as game name, platform, release year, genre, regional sales, global sales, critic scores, and user scores. These attributes provide a comprehensive overview of video game characteristics. By identifying similarities and differences between games, we can group them based on patterns in sales performance, genre preferences, and review scores. This analysis can help companies design more effective target marketing and promotional strategies.
+
